@@ -21,7 +21,7 @@ try {
 
     foreach ($movies as $movie) {
         echo "<li class= 'movies-item'>";
-        echo "🆔 <strong>ID: </strong>" . $movie["id"] . "<br>";
+        //echo "🆔 <strong>ID: </strong>" . $movie["id"] . "<br>";
         echo "🎬 <strong>Title:</strong> " . $movie["title"] . "<br>";
         echo "👤 <strong>Director:</strong> " . $movie["director"] . "<br>";
         echo "⏳ <strong>Duration:</strong> " . $movie["duration"] . " min<br>";

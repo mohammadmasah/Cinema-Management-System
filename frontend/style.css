@@ -1,0 +1,27 @@
+#movie-container ul {
+    list-style: none;
+    padding: 0;
+    background-color: #cc0000;
+}
+
+.movie-item {
+    background: #f9f9f9;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.btn-delete {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #cc0000;
+}

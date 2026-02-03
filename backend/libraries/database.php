@@ -27,6 +27,17 @@ try {
         echo "⏳ <strong>Duration:</strong> " . $movie["duration"] . " min<br>";
         echo "📅 <strong>Year:</strong> " . $movie["release_year"] . "<br>";
 
+        
+        echo "<button class='btn-update' 
+        data-id='{$movie['id']}' 
+        data-title='".htmlspecialchars($movie['title'])."' 
+        data-director='".htmlspecialchars($movie['director'])."' 
+        data-duration='{$movie['duration']}' 
+        data-year='{$movie['release_year']}' 
+        onclick='editMovie(this)'>Update</button>";
+
+
+
         echo "<button class='btn-delete' data-id='" . $movie["id"] . "'>Delete</button>";
     }
 } catch (PDOException $error) {

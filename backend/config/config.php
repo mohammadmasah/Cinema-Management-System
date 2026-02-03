@@ -1,7 +1,7 @@
 <?php
 
 define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'my_cinema');
+define('DB_NAME', 'cinema');
 define('DB_USER', 'mohammad');
 define('DB_PASS', 'Mohammad@500005');
 

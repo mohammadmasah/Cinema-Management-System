@@ -16,14 +16,14 @@
             <?php include "../backend/libraries/database.php"; ?>
         </div>
         <div>
-            <form action="../backend/libraries/add_movies.php" method="POST">
-               
+            <form action="../backend/libraries/add_movies.php" method="POST" id="movie-form">
+               <input type="hidden" name="id" id="form-movie-id">
+
                 <input type="text" name="title" id="form-title" placeholder="Movie Title" required>
                 <input type="text" name="director" id="form-director" placeholder="Director" required>
                 <input type="number" name="duration" id="form-duration" placeholder="Duration (min)" required>
                 <input type="number" name="release_year" id="form-release-year" placeholder="Release Year" required>
                 <button type="submit">Add Movie</button>
-                <button type="button" id="cancel-btn" style="display:none;" onclick="resetForm()">Cancel</button>
                 
             </form>
         </div>

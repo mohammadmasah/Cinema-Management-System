@@ -1,27 +1,28 @@
 <?php
-
 require_once __DIR__ . "/../config/config.php";
 
-$host = DB_HOST;
-$databaseName = DB_NAME;
-$username = DB_USER;
-$password = DB_PASS;
-
 try {
+
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    $sql = "INSERT INTO movies (title, director, duration, release_year) 
+            VALUES (?, ?, ?, ?)";
 
-    $id = $_GET['id'];
-    $sql = "DELETE FROM movies WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->execute([$id]);
+
+    $title = $_POST['title'];
+    $director = $_POST['director'];
+    $duration = $_POST['duration'];
+    $year = $_POST['release_year'];
+
+    $stmt->execute([$title, $director, $duration, $year]);
 
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit();
-
+    
 } catch (PDOException $e) {
-    echo "Error deleting record: " . $e->getMessage();
+    echo "Error: " . $e->getMessage();
 }
 
 $conn = null;

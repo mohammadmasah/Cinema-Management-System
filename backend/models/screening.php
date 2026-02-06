@@ -2,11 +2,14 @@
 
 class Screening
 {
+    //Properties
+
     private $id;
     private $movie_id;
     private $room_id;
     private $start_time;
 
+    //Initialize properties with default values
     public function __construct(array $data)
     {
         $this->id = $data['id'] ?? null;
@@ -21,6 +24,7 @@ class Screening
         return $this->start_time;
     }
 
+    //Converts the object properties into an array for API.
     public function toArray(): array
     {
         return [

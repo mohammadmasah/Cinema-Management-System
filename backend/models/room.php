@@ -1,16 +1,16 @@
 <?php
 
 class Room
-   
+
 {
-     //Properties
-     
+    //Properties
+
     private $id;
     private $name;
     private $capacity;
     private $active;
 
-    //Constructor
+    //Initialize properties with default values
     public function __construct(array $data)
     {
         $this->id = $data['id'] ?? null;
@@ -29,7 +29,7 @@ class Room
 
 
 
-    //API
+    //Converts the object properties into an array for API.
     public function toArray(): array
     {
         return [

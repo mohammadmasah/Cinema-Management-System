@@ -2,6 +2,7 @@
 
 class Movies
 {
+    //Properties
     private $id;
     private $title;
     private $duration;
@@ -10,24 +11,19 @@ class Movies
     private $genre;
     private $director;
 
+    //Initialize properties with default values
     public function __construct(array $data)
     {
-        $this->id= $data['id']?? null;
+        $this->id = $data['id'] ?? null;
         $this->title = $data['title'] ?? '';
-        $this->duration = $data['duration']?? 0;
-        $this->description = $data['description']?? '';
-        $this->release_year = $data['release_year']?? 0;
-        $this->genre = $data ['genre']?? '';
-        $this->director = $data['director']?? '';
+        $this->duration = $data['duration'] ?? 0;
+        $this->description = $data['description'] ?? '';
+        $this->release_year = $data['release_year'] ?? 0;
+        $this->genre = $data['genre'] ?? '';
+        $this->director = $data['director'] ?? '';
     }
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-    public function getDuration(): int
-    {
-        return $this->duration;
-    }
+
+    //Converts the object properties into an array for API.
     public function toArray(): array
     {
         return [

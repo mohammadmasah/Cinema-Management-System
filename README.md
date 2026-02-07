@@ -1,5 +1,5 @@
 # 🎬 CineLuxe Admin Dashboard
-![Uploading Screenshot 2026-02-07 at 23.00.10.png…]()
+
 
 ## A Feature-Rich Cinema Management System 🚀
 

@@ -35,7 +35,6 @@ CineLuxe Admin Dashboard is a modern, intuitive, and luxury web application desi
 -   **Database:** MySQL
 -   **Frontend:** HTML5, CSS3 (Custom Styling, Grid, Flexbox), JavaScript (Vanilla JS for dynamic interactions).
 -   **Version Control:** Git & GitHub
--   **Icons:** Font Awesome
 
 ---
 

@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . "/../config/config.php";
+require_once __DIR__ . "/../models/movies.php";
 
 function getMoviesPaginated($limit, $offset)
 {
@@ -21,7 +22,7 @@ function getMoviesPaginated($limit, $offset)
     }
 }
 
-function getMovies()
+function getAllMovies()
 {
     try {
         $db = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);

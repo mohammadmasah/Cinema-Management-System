@@ -1,27 +1,414 @@
-#movie-container ul {
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 1024px) {
+  body {
+    height: auto;
+    width: 100%;
+  }
+
+  .main-nav {
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #e50914;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links {
     list-style: none;
-    padding: 0;
-    background-color: #cc0000;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    margin: 0;
+  }
 
-.movie-item {
-    background: #f9f9f9;
-    margin-bottom: 15px;
-    padding: 15px;
+  .nav-links li {
+    margin: 0 25px;
+  }
+
+  .nav-links a {
+    position: relative;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #e50914;
+    text-shadow: 0 0 8px rgba(229, 9, 20, 0.6);
+  }
+  .nav-links a.active {
+    color: #e50914;
+  }
+  main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #fff;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #e50914;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  #movie-form {
+    background: black;
+    padding: 30px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #movie-form input {
+    background: black;
+    color: #fff;
+    border: 1px solid #333;
     border-radius: 8px;
-    border: 1px solid #ddd;
-}
-
-.btn-delete {
-    background-color: #ff4d4d;
-    color: white;
+    padding: 12px 15px;
+  }
+  #movie-form button {
+    background: #e50914;
+    color: #fff;
     border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 12px 30px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #movie-container {
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    gap: 25px;
+    padding: 0;
+  }
+
+  .movie-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: black;
+    border-radius: 15px;
+    border: 1px solid #222;
+    padding: 20px;
+    transition: all 0.4s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .movie-info strong {
+    display: block;
+    font-size: 1.4rem;
+  }
+
+  .movie-info span {
+    color: gray;
+    font-size: 0.9rem;
+  }
+
+  .movie-actions {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .btn-update,
+  .btn-delete {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-}
+  }
 
-.btn-delete:hover {
-    background-color: #cc0000;
+  .btn-update {
+    background: rgba(128, 128, 128, 0.503);
+    color: #fff;
+  }
+  .btn-delete {
+    background: rgba(229, 9, 20, 0.1);
+    color: #e50914;
+    border: 1px solid #e50914;
+  }
+
+  .btn-delete:hover {
+    background: #e50914;
+    color: #fff;
+  }
+  #submit-btn-room {
+    background: #e50914;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  /*End of Movies List*/
+
+  #rooms-container {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    gap: 25px;
+    padding: 0;
+    margin-bottom: 50px;
+    margin-top: 25px;
+  }
+  .room-item {
+    display: flex;
+    flex-direction: column;
+    background: black;
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    gap: 10px;
+  }
+  .room-item:hover {
+    transform: translateY(-8px);
+    border-color: #e50914;
+  }
+
+  .room-item strong {
+    font-size: 1.4rem;
+    color: #fff;
+    display: block;
+  }
+
+  .room-item span {
+    color: rgb(135, 135, 135);
+    font-size: 0.9rem;
+  }
+  .room-item button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .btn-edit {
+    background: #333;
+    color: white;
+  }
+
+  .btn-delete-room {
+    background: rgba(229, 9, 20, 0.1);
+    color: #e50914;
+    border: 1px solid #e50914 !important;
+  }
+
+  .btn-delete-room:hover {
+    background: #e50914;
+    color: white;
+  }
+  .add-room-section {
+    background: rgb(0, 0, 0);
+    padding: 30px;
+    border-radius: 15px;
+  }
+
+  #room-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  #room-form input,
+  #room-form select {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    min-width: 180px;
+  }
+  /*End of Halls*/
+
+  .screenings-list {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .screening-card {
+    background: black;
+    border-radius: 15px;
+    border: 1px solid #222;
+    padding: 20px;
+  }
+  .screening-card p {
+    margin: 8px 0;
+    color: #ccc;
+    font-size: 0.95rem;
+  }
+
+  .screening-card strong {
+    color: #fff;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-container {
+    background: black;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  #screening-form {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 120px;
+    gap: 20px;
+    align-items: end;
+  }
+  .form-group label {
+    color: #e50914;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+
+  .form-group select,
+  .form-group input {
+    background: #0c0c0cf6;
+    border: 1px solid #363636;
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    font-family: inherit;
+  }
+  .btn-delete,
+  .btn-edit {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .btn-edit {
+    background: #333;
+    color: white;
+  }
+
+  .btn-delete {
+    background: #e50914;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #submit-btn {
+    background: #e50914; /* قرمز اصلی */
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%; /* برای پر کردن فضای ستون خودش در گرید */
+  }
+
+  /*End of Screen*/
+
+  .admin-body {
+    background: radial-gradient(circle at top, #1e1e2f 0%, #0f0f1a 100%);
+    background-attachment: fixed;
+    color: #fff;
+  }
+  .dashboard-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2.5rem;
+    color: #e50914;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    gap: 30px;
+  }
+
+  .stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .stat-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    font-size: 1.8rem;
+  }
+
+  .movie-bg {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  }
+  .room-bg {
+    background: linear-gradient(135deg, #4776e6, #8e54e9);
+  }
+  .schedule-bg {
+    background: linear-gradient(135deg, #1d976c, #93f9b9);
+  }
+
+  .stat-info p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin: 5px 0 15px 0;
+  }
+
+  .stat-link {
+    color: #e50914;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+  }
 }

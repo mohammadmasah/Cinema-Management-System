@@ -16,7 +16,6 @@ class Room
         $this->id = $data['id'] ?? null;
         $this->name = $data['name'] ?? '';
         $this->capacity = $data['capacity'] ?? 0;
-
         $this->active = $data['active'] ?? 1;
     }
 

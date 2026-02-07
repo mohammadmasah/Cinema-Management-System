@@ -7,7 +7,15 @@
 </head>
 
 <body>
-   
+    <nav class="main-nav">
+        <ul class="nav-links">
+            <li><a href="../views/home.php">home</a></li>
+            <li><a href="../views/index.php">Movie List</a></li>
+            <li><a href="../views/rooms.php">Halls</a></li>
+            <li><a href="../views/screening.php" class="active">Screening</a></li>
+        </ul>
+
+    </nav>
     <main>
         <div class="form-container">
             <h2 id="form-title">Add Screening</h2>
@@ -19,7 +27,7 @@
                     <select name="movie_id" id="form-movie-id" required>
                         <?php
                         require_once "../../backend/controllers/movies.php";
-                        foreach (getMovies() as $movie) {
+                        foreach (getAllMovies() as $movie) {
                             echo "<option value='{$movie['id']}'>{$movie['title']}</option>";
                         }
                         ?>
@@ -42,7 +50,6 @@
                     <label>Time:</label>
                     <input type="datetime-local" name="start_time" id="form-start-time" required>
                 </div>
-
                 <button type="submit" id="submit-btn" class="btn-primary">Save</button>
                 <button type="button" id="cancel-btn" style="display:none" onclick="resetForm()">Cancel</button>
             </form>
@@ -69,13 +76,8 @@
                                 <button type="submit" class="btn-delete" onclick="return confirm('Delete?')">Delete</button>
                             </form>
 
-                            <button class="btn-edit"
-                                type="button"
-                                data-id="<?= $s['id'] ?>"
-                                data-movie="<?= $s['movie_id'] ?>"
-                                data-room="<?= $s['room_id'] ?>"
-                                data-time="<?= date('Y-m-d\TH:i', strtotime($s['start_time'])) ?>"
-                                onclick="editScreening(this)">Edit</button>
+                            <button class="btn-edit" type="button" data-id="<?= $s['id'] ?>" data-movie="<?= $s['movie_id'] ?>" data-room="<?= $s['room_id'] ?>" data-time="<?= date('Y-m-d\TH:i', strtotime($s['start_time'])) ?>" onclick="editScreening(this)">Edit</button>
+
                         </div>
                     </div>
                 <?php endforeach;

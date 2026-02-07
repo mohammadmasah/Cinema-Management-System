@@ -26,7 +26,7 @@ try {
 
     echo "Movie updated successfully! 🎬";
 
-    header("Location: ../../frontend/index.php");
+    header("Location: ../../frontend/views/index.php");
     exit();
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();

@@ -4,7 +4,7 @@
 ## A Feature-Rich Cinema Management System 🚀
 
 
-![Dashboard Screenshot]<img width="1080" height="1080" alt="photo-collage png" src="https://github.com/user-attachments/assets/b20deab3-92e0-4b90-8a38-101952f4274b" />
+<img width="1080" height="1080" alt="photo-collage png" src="https://github.com/user-attachments/assets/b20deab3-92e0-4b90-8a38-101952f4274b" />
 
 CineLuxe Admin Dashboard is a modern, intuitive, and luxury web application designed for seamless management of cinema operations. Built with PHP for the backend and a modern CSS/JavaScript frontend, it provides cinema administrators with powerful tools to handle movies, screening schedules, and cinema halls efficiently.
 
